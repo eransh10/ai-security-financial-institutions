@@ -14,7 +14,7 @@ while preserving accountability, least privilege, regulatory compliance, and aud
 
 ## Architecture Overview
 
-[Diagram to be added]
+![Secure Enterprise GenAI Platform - Logical Architecture](./LogicalSecureArchAI.png)
 
 ## Key Components
 
