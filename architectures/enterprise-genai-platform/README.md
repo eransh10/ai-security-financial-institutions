@@ -13,8 +13,40 @@ while preserving accountability, least privilege, regulatory compliance, and aud
 - AI governance integrates with existing IAM and GRC processes
 
 ## Architecture Overview
+The Secure Enterprise GenAI Platform is built around a strict separation between intent origination, authorization, enforcement, and execution. The architecture ensures that no model invocation, data retrieval, or tool execution can occur without explicit, contextual authorization and verifiable enforcement at runtime.
 
-![Secure Enterprise GenAI Platform - Logical Architecture](./LogicalSecureArchAI.png)
+The platform treats generative AI not as a standalone service, but as a governed execution environment subject to the same identity, access control, and audit requirements as any other regulated enterprise system.
+
+#### Logical Security Architecture
+
+![Secure Enterprise GenAI Platform – Logical Architecture](./LogicalSecureArchAI.png)
+
+This diagram defines the structural control model of the platform. It shows how all AI interactions are forced through a centralized control plane before reaching any execution capability.
+
+The logical architecture highlights the following control properties:
+- All users, applications, workloads, and AI agents operate as explicit security principals with managed identities.
+- Authorization decisions are centralized in a Policy Decision Point (PDP) and enforced consistently by a Policy Enforcement Point (PEP).
+- Direct access to models, enterprise APIs, and data sources is prohibited. All access is mediated through dedicated gateways that enforce scope, constraints, and least privilege.
+- Governance, telemetry, and audit functions operate as an evidence layer, capturing authorization decisions and enforcement outcomes for regulatory and risk oversight.
+
+This view establishes trust boundaries, enforcement chokepoints, and accountability ownership across the platform.
+
+#### Runtime Request Flow
+
+![Secure Enterprise GenAI Platform – Runtime Request Flow](./RuntimeRequestFlow.png)
+
+This diagram illustrates the end-to-end lifecycle of a single AI request at runtime. It demonstrates how user or application intent is translated into controlled execution through identity-aware authorization and enforcement.
+
+At a high level, the runtime flow proceeds as follows:
+1. A user or calling application submits an AI request through an approved interface.
+2. The AI Access Gateway normalizes the request and forwards it into the controlled AI platform.
+3. The Policy Enforcement Point requests an authorization decision from the Policy Decision Point using verified identity, context, and policy.
+4. If approved, constrained access to models, tools, and data is granted through their respective gateways.
+5. All decisions, actions, and outcomes are captured by the telemetry and governance layer as auditable evidence.
+
+This runtime view demonstrates how least privilege, accountability, and auditability are enforced per request, rather than assumed implicitly through static configuration.
+
+Together, these diagrams show how the platform closes structural control gaps that emerge when generative AI systems operate outside traditional IAM, application security, and governance models.
 
 ## Key Components
 
