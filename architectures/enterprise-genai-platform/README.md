@@ -63,7 +63,7 @@ The evidence layer. It collects structured logs for authorization decisions, enf
 ### External Model Provider
 Any third-party hosted model endpoint. It is outside the institution’s trust boundary and must be accessed only through the Model Access Gateway with enforced constraints and complete telemetry for each invocation.
 
-## Runtime Request Flow
+## Component Explanations (Runtime Request Flow)
 
 Runtime Request Flow Diagram illustrates a single end-to-end AI request as it moves through the platform, including identity resolution, authorization, controlled retrieval and tool execution, model invocation, and evidence generation. The focus is on enforceable control and accountability at runtime.
 
